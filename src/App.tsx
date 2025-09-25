@@ -22,10 +22,18 @@ export default function App() {
     setNotes((prev) => prev.filter((note) => note.id !== id));
   }
 
+  const toggleImportant = (id: string) => {
+    setNotes((prev) => 
+      prev.map((note) => 
+        note.id === id ? {...note, important: !note.important} : note
+        )
+      );
+  }
+
   return (
     <div>
       <NoteInput onAdd={addNote} />
-      <NoteList notes={notes} onDelete={deleteNote}/>
+      <NoteList notes={notes} onDelete={deleteNote} onToggleImportant={toggleImportant}/>
     </div>
   );
 }
