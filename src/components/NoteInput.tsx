@@ -17,10 +17,14 @@ export default function NoteInput({onAdd}: NoteInputProps) {
         setBody("");
     }
     return(
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-            <textarea placeholder="Write your note..." value={body} onChange={(e) => setBody(e.target.value)}/>
-            <button type="submit">Add Note</button>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2 mb-4 p-2 border-y">
+            <h2 className="py-2 font-medium">Add a New Note</h2>
+            <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} className="font-light text-md pb-1 focus:outline-none"/>
+            <textarea placeholder="Write your note..." value={body} onChange={(e) => setBody(e.target.value)} className="font-extralight text-sm focus:outline-none" rows={5} />
+            <div className="flex justify-end">
+                <button type="submit" className="border rounded-sm text-cyan-700 px-1 hover:cursor-pointer hover:bg-cyan-700 hover:text-yellow-50">Submit</button>
+            </div>
+            
         </form>
     );
 }

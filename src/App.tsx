@@ -5,6 +5,7 @@ import { addNoteLogic, deleteNoteLogic, toggleImportantLogic } from "./utils/not
 import useLocalStorage from "./hooks/useLocalStorage";
 
 const STORAGE_KEY = "notes-list"
+
 export default function App() {
   // app-level state shape
   const [notes, setNotes] = useLocalStorage<Note[]>(STORAGE_KEY, [])
@@ -22,7 +23,8 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="p-10 bg-yellow-50">
+      <h1 className="text-2xl font-bold mb-4">Note App</h1>
       <NoteInput onAdd={addNote} />
       <NoteList notes={notes} onDelete={deleteNote} onToggleImportant={toggleImportant}/>
     </div>
