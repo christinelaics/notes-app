@@ -20,7 +20,7 @@ export default function NoteItem({
           <small>{note.createdAt.toLocaleString().split("T")[0]}</small>
         </div>
       </div>
-      <div className="flex justify-end mt-2 mb-4">
+      <div className="flex justify-end mt-2 mb-6">
             <button
               className="text-xs border rounded-sm mr-1 px-1 text-cyan-700 hover:cursor-pointer hover:bg-cyan-700 hover:text-yellow-50"
               onClick={() => onToggleImportant(note.id)}

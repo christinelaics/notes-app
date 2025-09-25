@@ -1,7 +1,7 @@
 import type { Note } from "./types/types";
 import NoteInput from "./components/NoteInput";
 import NoteList from "./components/NoteList";
-import { addNoteLogic, deleteNoteLogic, toggleImportantLogic } from "./utils/notes";
+import { addNoteLogic, deleteNoteLogic, toggleImportantLogic } from "./utils/notesLogic";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 const STORAGE_KEY = "notes-list"
