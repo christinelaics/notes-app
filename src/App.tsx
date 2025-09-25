@@ -18,10 +18,14 @@ export default function App() {
     setNotes((prev) => [newNote, ...prev]);
   }
 
+  const deleteNote = (id: string) => {
+    setNotes((prev) => prev.filter((note) => note.id !== id));
+  }
+
   return (
     <div>
       <NoteInput onAdd={addNote} />
-      <NoteList notes={notes} />
+      <NoteList notes={notes} onDelete={deleteNote}/>
     </div>
   );
 }
